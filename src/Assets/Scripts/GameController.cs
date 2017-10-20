@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
 	public GameObject gameOverText;
 	public float timer = 30.0f;
 
+	private float timerValue;
 	private bool isGameOver;
 
 	void Awake() {
@@ -23,8 +24,7 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		isGameOver = false;
-		timerText.text = "Timer: " + Mathf.FloorToInt(timer);
+		GameStart ();
 	}
 
 	// Update is called once per frame
@@ -34,18 +34,32 @@ public class GameController : MonoBehaviour {
 				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 			}
 		} else {
-			timer -= Time.deltaTime;
-			if (timer <= 0) {
+			if (timerValue <= 0) {
 				GameOver ();		
 			} else {
-				timerText.text = "Timer: " + Mathf.FloorToInt(timer);
+				timerText.text = "Timer: " + Mathf.FloorToInt(timerValue);
 			}
 		}
+	}
+
+	public void GameStart() {
+		isGameOver = false;
+		StartCoroutine(StartCountdown(timer));
+		timerText.text = "Timer: " + Mathf.FloorToInt(timerValue);
 	}
 
 	public void GameOver() {
 		gameOverText.SetActive (true);
 		isGameOver = true;
 		timerText.text = "Time Over!";
+	}
+
+	private IEnumerator StartCountdown(float countdownValue = 10) {
+		timerValue = countdownValue;
+		while (timerValue > 0)
+		{
+			yield return new WaitForSeconds(1.0f);
+			timerValue--;
+		}
 	}
 }
