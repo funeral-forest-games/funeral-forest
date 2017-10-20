@@ -1,5 +1,5 @@
-#Funeral Forest
-##Unity Settings
+# Funeral Forest
+## Unity Settings
 
 -> Edit -> Project Settings -> Editor:
 
