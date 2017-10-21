@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212476929326052268}
   - component: {fileID: 114387523297948696}
   m_Layer: 0
-  m_Name: TempAvatar 1
+  m_Name: TempAvatar + Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -18,7 +18,8 @@ public class GameController : MonoBehaviour {
 	private float lampLightRange;
 	private int customFrames;
 
-	private Timer timer;
+	public GameObject avatar;
+	private AvatarLogic avatarLogic;
 
 	void Awake() {
 		if (instance == null) {
@@ -30,16 +31,15 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		timer = GetComponent<Timer> ();
+		avatarLogic = avatar.GetComponent<AvatarLogic> ();
 		GameStart ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (isGameOver) {
-			if (Input.anyKeyDown) {
-				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-			}
+			avatarLogic.ResetAvatarPosition ();
+			GameStart ();
 		} else {
 			if (timerValue <= 0) {
 				GameOver ();		
@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameOver() {
-		gameOverText.SetActive (true);
+		//gameOverText.SetActive (true);
 		isGameOver = true;
 		timerText.text = "Time Over!";
 		lampLight.range = 15;
