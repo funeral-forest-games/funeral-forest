@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
 using UnityEngine;
-=======
-﻿using UnityEngine;
 using System.Collections.Generic;
->>>>>>> Stashed changes
 using System.Collections;
 
 public class AvatarMovement : MonoBehaviour {
