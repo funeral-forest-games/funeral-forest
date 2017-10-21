@@ -9,10 +9,14 @@ public class GameController : MonoBehaviour {
 	public static GameController instance;
 	public Text timerText;
 	public GameObject gameOverText;
-	public float timer = 30.0f;
+	public float timer = 100.0f;
+	public Light lampLight;
 
 	private float timerValue;
+	private float timerDefaultValue;
 	private bool isGameOver;
+	private float lampLightRange;
+	private int customFrames;
 
 	void Awake() {
 		if (instance == null) {
@@ -37,7 +41,16 @@ public class GameController : MonoBehaviour {
 			if (timerValue <= 0) {
 				GameOver ();		
 			} else {
+				customFrames++;
 				timerText.text = "Timer: " + Mathf.FloorToInt(timerValue);
+
+				lampLightRange = ((Mathf.Pow (((customFrames / timerDefaultValue)), -1) / 18) * 1000) + 1;
+
+				if (lampLightRange >= 15) {
+					lampLightRange = 15;
+				}
+
+				lampLight.range = lampLightRange;
 			}
 		}
 	}
@@ -45,13 +58,17 @@ public class GameController : MonoBehaviour {
 	public void GameStart() {
 		isGameOver = false;
 		StartCoroutine(StartCountdown(timer));
+		timerDefaultValue = timerValue;
 		timerText.text = "Timer: " + Mathf.FloorToInt(timerValue);
+		lampLight.range = 15;
+		customFrames = 0;
 	}
 
 	public void GameOver() {
 		gameOverText.SetActive (true);
 		isGameOver = true;
 		timerText.text = "Time Over!";
+		lampLight.range = 15;
 	}
 
 	private IEnumerator StartCountdown(float countdownValue = 10) {

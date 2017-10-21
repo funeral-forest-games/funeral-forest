@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: b701468af0ad7ae4c940208874aeba4c
+labels:
+- Merchants
+- Dungeons
+- Fantasy
+- Potions
+- Ambient
+- Leitmotif
+- Leitmotiv
+- Elves
+- Orcs
+- Medieval
+- Celtic
+- Dragons
+- Epic
+- Orchestral
+- Binaural
+- Textures
+- Drones
+timeCreated: 1429366885
+licenseType: Store
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
