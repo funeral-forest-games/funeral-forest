@@ -32,6 +32,24 @@ public class GrassBrush : GridBrushBase {
 		}
 	}
 
+	public override void BoxFill(GridLayout grid, GameObject brushTarget, BoundsInt position)
+	{
+		Tilemap tileMap = GetTilemap();
+
+		if (tileMap != null) {
+			foreach (Vector3Int pos in position.allPositionsWithin) {
+				PaintInternal(pos, tileMap);
+			}
+		}
+	}
+
+	public override void Erase(GridLayout grid, GameObject brushTarget, Vector3Int position)
+	{
+		Tilemap tileMap = GetTilemap();
+
+		tileMap.SetTile (position, null);
+	}
+
 	private void PaintInternal(Vector3Int position, Tilemap tilemap)
 	{
 		int rnd = Mathf.RoundToInt(Random.Range (0f, tiles.Length + overflow - 1));
