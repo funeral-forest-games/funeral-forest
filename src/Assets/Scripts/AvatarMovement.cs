@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 using UnityEngine;
+=======
+﻿using UnityEngine;
+using System.Collections.Generic;
+>>>>>>> Stashed changes
 using System.Collections;
 
 public class AvatarMovement : MonoBehaviour {
@@ -31,4 +36,12 @@ public class AvatarMovement : MonoBehaviour {
 		//Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
 		//rb2d.AddForce (movement * speed);
 	}
+
+
+    void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag("PickUp")) {
+            other.gameObject.SetActive(false);
+			Debug.Log("Hello");
+		}
+    }
 }

@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour {
 	private bool isGameOver;
 	private float lampLightRange;
 	private int customFrames;
+	//private Timer timer;
 
 	public GameObject avatar;
 	private AvatarLogic avatarLogic;
