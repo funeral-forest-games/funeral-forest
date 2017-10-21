@@ -19,6 +19,11 @@ public class Timer : MonoBehaviour {
 		isRunning = false;
 	}
 
+	public void ResetTimer() {
+		StopTimer ();
+		StartTimer ();
+	}
+
 	public bool IsDone() {
 		return isRunning;
 	}
