@@ -9,10 +9,11 @@ public class GameController : MonoBehaviour {
 	public static GameController instance;
 	public Text timerText;
 	public GameObject gameOverText;
-	public float timer = 30.0f;
 
 	private float timerValue;
 	private bool isGameOver;
+
+	private Timer timer;
 
 	void Awake() {
 		if (instance == null) {
@@ -24,42 +25,23 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		timer = GetComponent<Timer> ();
 		GameStart ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (isGameOver) {
-			if (Input.anyKeyDown) {
-				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-			}
-		} else {
-			if (timerValue <= 0) {
-				GameOver ();		
-			} else {
-				timerText.text = "Timer: " + Mathf.FloorToInt(timerValue);
-			}
-		}
+		if (timer.IsDone()) {
+			timer.StopTimer ();
+			GameStart ();
+		} 
+
+		timerText.text = "Timer: " + timer.GetTimerValue();
 	}
 
 	public void GameStart() {
 		isGameOver = false;
-		StartCoroutine(StartCountdown(timer));
-		timerText.text = "Timer: " + Mathf.FloorToInt(timerValue);
+		timer.StartTimer ();
 	}
 
-	public void GameOver() {
-		gameOverText.SetActive (true);
-		isGameOver = true;
-		timerText.text = "Time Over!";
-	}
-
-	private IEnumerator StartCountdown(float countdownValue = 10) {
-		timerValue = countdownValue;
-		while (timerValue > 0)
-		{
-			yield return new WaitForSeconds(1.0f);
-			timerValue--;
-		}
-	}
 }

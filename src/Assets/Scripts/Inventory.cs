@@ -14,7 +14,6 @@ public class Inventory : MonoBehaviour {
 	}
 
 	void Update() {
-		Debug.Log ("Items: " + items.Count);
 	}
 
 	public void Add(GameObject item) {

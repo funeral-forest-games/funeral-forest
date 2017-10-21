@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour {
 		isRunning = false;
 	}
 
-	public bool IsRunning() {
+	public bool IsDone() {
 		return isRunning;
 	}
 
@@ -35,5 +35,6 @@ public class Timer : MonoBehaviour {
 			yield return new WaitForSeconds(1.0f);
 			timerValue--;
 		}
+		isRunning = false;
 	}
 }
