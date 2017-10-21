@@ -23,8 +23,6 @@ public class InventoryCollectable : MonoBehaviour {
 			isCollected = true;
 			Hide ();
 		}
-
-		Debug.Log ("object collected: " + other);
 	}
 
 	private void Hide() {

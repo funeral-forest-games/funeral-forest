@@ -17,7 +17,8 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void Add(GameObject item) {
-		GameObject newItem = new GameObject ("Inventory Item (" + items.Count + ")");
+		Debug.Log (item);
+		GameObject newItem = new GameObject (item.name);
 		Image image = newItem.AddComponent<Image> ();
 		image.sprite = item.GetComponent<SpriteRenderer> ().sprite;
 		newItem.GetComponent<Transform> ().SetParent(inventoryGui.transform);
@@ -25,4 +26,14 @@ public class Inventory : MonoBehaviour {
 		items.Add (newItem);
 	}
 
+	public bool ContainsItem(string itemName) {
+		Debug.Log (itemName);
+		for(int i = 0; i < items.Count; i++){
+			Debug.Log ("ITEM " + items [i].name);
+			if(items[i].name == itemName) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
