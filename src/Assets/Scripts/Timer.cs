@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour {
 	}
 
 	public bool IsDone() {
-		return isRunning;
+		return !isRunning;
 	}
 
 	public int GetTimerValue() {
