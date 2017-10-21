@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LargeTile
+  - LevelChanger
   layers:
   - Default
   - TransparentFX
@@ -40,4 +42,28 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3125579343
+    locked: 0
+  - name: Grass
+    uniqueID: 477850715
+    locked: 0
+  - name: Midground
+    uniqueID: 411752301
+    locked: 0
+  - name: Trees
+    uniqueID: 3757816819
+    locked: 0
+  - name: Overlayed Trees
+    uniqueID: 2918671323
+    locked: 0
+  - name: Overlayed Trees 2
+    uniqueID: 300948275
+    locked: 0
+  - name: Overlayed Trees 3
+    uniqueID: 3814619381
+    locked: 0
+  - name: Foreground
+    uniqueID: 3756012371
     locked: 0
