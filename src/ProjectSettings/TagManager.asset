@@ -4,12 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
   - LargeTile
   - LevelChanger
-=======
   - PickUp
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -47,7 +44,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< Updated upstream
   - name: Background
     uniqueID: 3125579343
     locked: 0
@@ -71,8 +67,6 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3756012371
-=======
   - name: Pickups
     uniqueID: 404491965
->>>>>>> Stashed changes
     locked: 0
