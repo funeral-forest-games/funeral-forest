@@ -13,6 +13,18 @@ public class InventoryCollectable : MonoBehaviour {
 		Show ();
 	}
 
+	public void OnCollisionEnter2D(Collision2D other) {
+		if (isCollected) {
+			return;
+		}
+
+		if (other.gameObject.GetComponent<Inventory> ()) {
+			other.gameObject.GetComponent<Inventory> ().Add (this.gameObject);	
+			isCollected = true;
+			Hide ();
+		}
+	}
+
 	public void OnTriggerEnter2D(Collider2D other) {
 		if (isCollected) {
 			return;
@@ -23,6 +35,10 @@ public class InventoryCollectable : MonoBehaviour {
 			isCollected = true;
 			Hide ();
 		}
+	}
+
+	public void handleCollision(GameObject obj) {
+
 	}
 
 	private void Hide() {

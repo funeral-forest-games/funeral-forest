@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bd638eea3964bf983e5e17308ea676, type: 3}
+  m_Name: GrassBrush
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: cf267bc04806b4403bd15a27941d2838, type: 2}
+  - {fileID: 11400000, guid: cd5f7125c8a9445198212c798ebab29f, type: 2}
+  - {fileID: 11400000, guid: 13b15eaa3c2f946a0bb41c81031d0f75, type: 2}
+  - {fileID: 11400000, guid: f038a66f731ab4d85af54956d1b092b7, type: 2}
+  tileMapName: Grass Tilemap

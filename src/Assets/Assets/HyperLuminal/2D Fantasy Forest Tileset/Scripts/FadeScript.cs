@@ -99,8 +99,8 @@ public class FadeScript : MonoBehaviour
 	/// </summary>
 	private void ChangeLevel()
 	{
-		int levelID = Application.loadedLevel + 1;
-		if(levelID > Application.levelCount - 1){ levelID = 0; }
-		Application.LoadLevel(levelID);
+		//int levelID = Application.loadedLevel + 1;
+		//if(levelID > Application.levelCount - 1){ levelID = 0; }
+		//Application.LoadLevel(levelID);
 	}
 }

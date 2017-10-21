@@ -17,7 +17,6 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void Add(GameObject item) {
-		Debug.Log (item);
 		GameObject newItem = new GameObject (item.name);
 		Image image = newItem.AddComponent<Image> ();
 		image.sprite = item.GetComponent<SpriteRenderer> ().sprite;
