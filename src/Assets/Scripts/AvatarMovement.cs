@@ -48,7 +48,6 @@ public class AvatarMovement : MonoBehaviour {
 			float currentSpeed = movement.magnitude;
 
 			animator.SetFloat ("Speed", currentSpeed);
-			Debug.Log(movement);
 			if (currentSpeed > 0) {
 			
 				if (footsteps.isPlaying == false) {
