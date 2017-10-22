@@ -156,6 +156,11 @@ Prefab:
       propertyPath: inventoryGui
       value: 
       objectReference: {fileID: 2034336057}
+    - target: {fileID: 114667923197060416, guid: d1c23a802323044f8b4ae68d9bb5a47f,
+        type: 2}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1c23a802323044f8b4ae68d9bb5a47f, type: 2}
   m_IsPrefabParent: 0
@@ -38021,7 +38026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1640365854}
   gameOverText: {fileID: 1300018406}
-  timer: 5
+  timer: 20
   lampLight: {fileID: 324910910}
   raven: {fileID: 1145621945}
   avatar: {fileID: 222516194}
