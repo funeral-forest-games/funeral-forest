@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
 	private float timerDefaultValue;
 	private bool isGameOver;
 	private int customFrames;
+	private string timerGui = "";
 	//private Timer timer;
 
 	public GameObject raven;
@@ -38,6 +39,7 @@ public class GameController : MonoBehaviour {
 		avatarLogic = avatar.GetComponent<AvatarLogic> ();
 		avatarMovement = avatar.GetComponent<AvatarMovement> ();
 		ravenScript = raven.GetComponent<RavenScript> ();
+
 		GameStart ();
 	}
 
@@ -64,7 +66,7 @@ public class GameController : MonoBehaviour {
 				GameOver ();		
 			} else {
 				customFrames++;
-				timerText.text = "Timer: " + Mathf.FloorToInt(timerValue);
+				timerText.text = timerGui + Mathf.FloorToInt(timerValue);
 			}
 		}
 	}
@@ -77,7 +79,7 @@ public class GameController : MonoBehaviour {
 		isGameOver = false;
 		StartCoroutine(StartCountdown(timer));
 		timerDefaultValue = timerValue;
-		timerText.text = "Timer: " + Mathf.FloorToInt(timerValue);
+		timerText.text = timerGui + Mathf.FloorToInt(timerValue);
 		customFrames = 0;
 	}
 
