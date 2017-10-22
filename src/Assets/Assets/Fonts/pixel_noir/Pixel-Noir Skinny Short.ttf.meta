@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b0ba7cb47d95941959a4884872fc97ad
+timeCreated: 1508668864
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pixel-Noir Skinny Short
+  fontNames:
+  - Pixel-Noir Skinny Short
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

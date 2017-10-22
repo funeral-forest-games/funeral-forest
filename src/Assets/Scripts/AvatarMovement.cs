@@ -39,7 +39,6 @@ public class AvatarMovement : MonoBehaviour {
 
 			//Use the two store floats to create a new Vector2 variable movement.
 			Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-			Debug.Log(movement.magnitude);
 			if (movement.magnitude > 0) {
 				if (footsteps.isPlaying == false) {
 					footsteps.Play ();
