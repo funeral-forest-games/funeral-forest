@@ -9,6 +9,8 @@ public class RavenScript : MonoBehaviour {
 	private Camera mainCamera;
 	private Vector2 avatarOffset;
 
+	public GameObject fadeToBlack;
+
 	private AudioSource ravenSound;
 
 	private Rigidbody2D rb2d;
@@ -45,7 +47,11 @@ public class RavenScript : MonoBehaviour {
 		rb2d.position = p;
 		rb2d.velocity = new Vector2 (15f, 0f);
 		Invoke("PlaySound", 0.3f);
+		Invoke("FadeToBlack", 1f);
+	}
 
+	private void FadeToBlack() {
+		fadeToBlack.GetComponent<Animator> ().StartPlayback ();
 	}
 
 	private void PlaySound() {
