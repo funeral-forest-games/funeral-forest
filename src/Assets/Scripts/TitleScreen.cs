@@ -35,7 +35,9 @@ public class TitleScreen : MonoBehaviour {
 
 		GUI.color = color;
 		GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), imageToDisplay);
-		GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), imageLogo);
+		if (imageLogo) {
+			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), imageLogo);
+		}
 
 		if (Input.anyKeyDown && !isSwitching) {
 			isSwitching = true;

@@ -206,5 +206,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageToDisplay: {fileID: 2800000, guid: 8eecd9a27869548f595552c07cc9755c, type: 3}
   imageLogo: {fileID: 0}
-  timeForFade: 15
+  timeForFade: 5
   nextLevelToLoad: FunderalGameSplash

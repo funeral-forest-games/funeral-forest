@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour {
 	public float timer = 100.0f;
 
 	private float timerValue;
-	private float timerDefaultValue;
+	//private float timerDefaultValue;
 	private bool isGameOver;
 	private int customFrames;
 	private string timerGui = "";
@@ -51,12 +51,13 @@ public class GameController : MonoBehaviour {
 				ravenFlying = true;
 				avatarMovement.camFollowsAvatar = false;
 				avatarMovement.avatarLocked = true;
-				avatar.GetComponent<Animator> ().SetTrigger ("PlayerWakeUp");
+				avatar.GetComponent<Animator> ().SetTrigger ("PlayerIdle");
 			} else {
 				if (ravenScript.IsFlyingDone ()) {
 					ravenFlying = false;
 					avatarMovement.camFollowsAvatar = true;
 					ravenScript.Reset ();
+					Invoke("SetAvatarWakeUp", 0.3f);
 					Invoke("UnlockAvatar", 1.3f);
 					avatarLogic.ResetAvatarPosition ();
 					GameStart ();
@@ -76,10 +77,14 @@ public class GameController : MonoBehaviour {
 		avatarMovement.avatarLocked = false;
 	}
 
+	private void SetAvatarWakeUp() {
+		avatar.GetComponent<Animator> ().SetTrigger ("PlayerWakeUp");
+	}
+
 	public void GameStart() {
 		isGameOver = false;
 		StartCoroutine(StartCountdown(timer));
-		timerDefaultValue = timerValue;
+		//timerDefaultValue = timerValue;
 		timerText.text = timerGui + Mathf.FloorToInt(timerValue);
 		customFrames = 0;
 	}

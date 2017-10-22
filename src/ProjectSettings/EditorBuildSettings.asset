@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: ffc7784d3596b47bbac6711e46a91d45
+    path: Assets/Scenes/Menus/FuneralGamesSplash.unity
+    guid: f866d61812e0541bc855c1d5bcb1fc7d
   - enabled: 1
     path: Assets/Scenes/Menus/TitleSplash.unity
     guid: ab2c6d86e9a7a4441961d712f2e3d245
   - enabled: 1
-    path: Assets/Scenes/Menus/FuneralGamesSplash.unity
-    guid: f866d61812e0541bc855c1d5bcb1fc7d
+    path: Assets/Scenes/Main.unity
+    guid: ffc7784d3596b47bbac6711e46a91d45
   - enabled: 1
     path: Assets/Scenes/Menus/OutroSplash.unity
     guid: 999c2f4f8bc2848b8bf4630f9c260e6a

@@ -6,10 +6,12 @@ public class InventoryCollectable : MonoBehaviour {
 
 	private bool isCollected;
 	private SpriteRenderer spriteRenderer;
+	private AudioSource itemPickup;
 
 	void Start() {
 		isCollected = false;
 		spriteRenderer = GetComponent<SpriteRenderer> ();
+		itemPickup = GameObject.Find ("ItemPickupSound").GetComponent<AudioSource> ();
 		Show ();
 	}
 
@@ -32,6 +34,7 @@ public class InventoryCollectable : MonoBehaviour {
 
 		if (other.GetComponent<Inventory> ()) {
 			other.GetComponent<Inventory> ().Add (this.gameObject);	
+			itemPickup.Play ();
 			isCollected = true;
 			Hide ();
 		}
