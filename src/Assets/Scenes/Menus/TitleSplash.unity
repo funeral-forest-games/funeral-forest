@@ -142,7 +142,7 @@ MonoBehaviour:
   imageToDisplay: {fileID: 2800000, guid: a36ea20089289424db932390eeec5f8e, type: 3}
   imageLogo: {fileID: 2800000, guid: e8caade915730461e99af2ca1ed0d58b, type: 3}
   timeForFade: 1
-  nextLevelToLoad: Level Blue
+  nextLevelToLoad: Main
 --- !u!4 &17347490
 Transform:
   m_ObjectHideFlags: 0
