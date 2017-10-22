@@ -47,7 +47,7 @@ public class RavenScript : MonoBehaviour {
 		rb2d.position = p;
 		rb2d.velocity = new Vector2 (15f, 0f);
 		Invoke("PlaySound", 0.3f);
-		Invoke("FadeToBlack", 1f);
+		Invoke("FadeToBlack", 0.9f);
 	}
 
 	private void FadeToBlack() {
