@@ -7,6 +7,8 @@ public class DoorObject : MonoBehaviour {
 	private bool isDone;
 	public GameObject key;
 
+	public GameObject childObj;
+
 	private AudioSource idleAudio, touchAudio, doneAudio;
 
 	// Use this for initialization
@@ -31,6 +33,9 @@ public class DoorObject : MonoBehaviour {
 			Inventory inventory = other.GetComponent<Inventory> ();
 			if (inventory.ContainsItem (key.name)) {
 				gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+				if (childObj) {
+					childObj.GetComponent<SpriteRenderer> ().enabled = false;
+				}
 				gameObject.GetComponent<Collider2D> ().enabled = false;
 				isDone = true;
 				idleAudio.Stop ();
