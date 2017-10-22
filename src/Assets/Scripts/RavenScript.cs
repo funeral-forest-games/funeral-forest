@@ -51,7 +51,8 @@ public class RavenScript : MonoBehaviour {
 	}
 
 	private void FadeToBlack() {
-		fadeToBlack.GetComponent<Animator> ().StartPlayback ();
+		Animator animator = fadeToBlack.GetComponent<Animator> ();
+		animator.SetTrigger ("FadeIn");
 	}
 
 	private void PlaySound() {
