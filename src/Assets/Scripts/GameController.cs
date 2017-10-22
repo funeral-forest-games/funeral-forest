@@ -19,8 +19,13 @@ public class GameController : MonoBehaviour {
 	private int customFrames;
 	//private Timer timer;
 
+	public GameObject raven;
+	private RavenScript ravenScript;
+	private bool ravenFlying;
+
 	public GameObject avatar;
 	private AvatarLogic avatarLogic;
+	private AvatarMovement avatarMovement;
 
 	void Awake() {
 		if (instance == null) {
@@ -33,14 +38,29 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		avatarLogic = avatar.GetComponent<AvatarLogic> ();
+		avatarMovement = avatar.GetComponent<AvatarMovement> ();
+		ravenScript = raven.GetComponent<RavenScript> ();
 		GameStart ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (isGameOver) {
-			avatarLogic.ResetAvatarPosition ();
-			GameStart ();
+			if (!ravenFlying) {
+				ravenScript.ActivateRaven ();
+				ravenFlying = true;
+				avatarMovement.camFollowsAvatar = false;
+				avatarMovement.avatarLocked = true;
+			} else {
+				if (ravenScript.IsFlyingDone ()) {
+					ravenFlying = false;
+					avatarMovement.camFollowsAvatar = true;
+					avatarMovement.avatarLocked = false;
+					ravenScript.Reset ();
+					avatarLogic.ResetAvatarPosition ();
+					GameStart ();
+				}
+			}
 		} else {
 			if (timerValue <= 0) {
 				GameOver ();		
