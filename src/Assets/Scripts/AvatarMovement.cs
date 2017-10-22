@@ -34,6 +34,7 @@ public class AvatarMovement : MonoBehaviour {
 	{
 		rb2d.velocity = Vector2.zero;
 		if (avatarLocked) {
+			animator.SetFloat ("Speed", 0);
 			if (footsteps.isPlaying) {
 				footsteps.Stop ();
 			}

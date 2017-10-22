@@ -26,7 +26,6 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public bool ContainsItem(string itemName) {
-		Debug.Log (itemName);
 		for(int i = 0; i < items.Count; i++){
 			if(items[i].name == itemName) {
 				return true;
