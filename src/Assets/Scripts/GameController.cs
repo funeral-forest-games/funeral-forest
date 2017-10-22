@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour {
 					ravenFlying = false;
 					avatarMovement.camFollowsAvatar = true;
 					ravenScript.Reset ();
-					Invoke("UnlockAvatar", 2f);
+					Invoke("UnlockAvatar", 1.3f);
 					avatarLogic.ResetAvatarPosition ();
 					GameStart ();
 				}
