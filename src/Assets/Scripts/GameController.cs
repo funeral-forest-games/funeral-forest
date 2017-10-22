@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour {
 				ravenFlying = true;
 				avatarMovement.camFollowsAvatar = false;
 				avatarMovement.avatarLocked = true;
+				avatar.GetComponent<Animator> ().SetTrigger ("PlayerWakeUp");
 			} else {
 				if (ravenScript.IsFlyingDone ()) {
 					ravenFlying = false;

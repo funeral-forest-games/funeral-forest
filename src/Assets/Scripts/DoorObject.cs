@@ -7,7 +7,7 @@ public class DoorObject : MonoBehaviour {
 	private bool isDone;
 	public GameObject key;
 
-	public GameObject childObj;
+	public GameObject childObj, childObj2;
 
 	private AudioSource idleAudio, touchAudio, doneAudio;
 
@@ -38,6 +38,9 @@ public class DoorObject : MonoBehaviour {
 				if (childObj) {
 					childObj.GetComponent<SpriteRenderer> ().enabled = false;
 				}
+				if (childObj2) {
+					childObj2.GetComponent<SpriteRenderer> ().enabled = false;
+				}
 				gameObject.GetComponent<Collider2D> ().enabled = false;
 				isDone = true;
 				idleAudio.Stop ();
@@ -57,6 +60,9 @@ public class DoorObject : MonoBehaviour {
 				gameObject.GetComponent<SpriteRenderer> ().enabled = false;
 				if (childObj) {
 					childObj.GetComponent<SpriteRenderer> ().enabled = false;
+				}
+				if (childObj2) {
+					childObj2.GetComponent<SpriteRenderer> ().enabled = false;
 				}
 				gameObject.GetComponent<Collider2D> ().enabled = false;
 				isDone = true;
