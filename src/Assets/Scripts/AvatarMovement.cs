@@ -26,7 +26,11 @@ public class AvatarMovement : MonoBehaviour {
 	void FixedUpdate()
 	{
 		rb2d.velocity = Vector2.zero;
-		if (!avatarLocked) {
+		if (avatarLocked) {
+			if (footsteps.isPlaying) {
+				footsteps.Stop ();
+			}
+		} else {
 			//Store the current horizontal input in the float moveHorizontal.
 			float moveHorizontal = Input.GetAxis ("Horizontal");
 

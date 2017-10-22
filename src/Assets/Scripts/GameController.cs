@@ -53,8 +53,8 @@ public class GameController : MonoBehaviour {
 				if (ravenScript.IsFlyingDone ()) {
 					ravenFlying = false;
 					avatarMovement.camFollowsAvatar = true;
-					avatarMovement.avatarLocked = false;
 					ravenScript.Reset ();
+					Invoke("UnlockAvatar", 2f);
 					avatarLogic.ResetAvatarPosition ();
 					GameStart ();
 				}
@@ -67,6 +67,10 @@ public class GameController : MonoBehaviour {
 				timerText.text = "Timer: " + Mathf.FloorToInt(timerValue);
 			}
 		}
+	}
+
+	private void UnlockAvatar() {
+		avatarMovement.avatarLocked = false;
 	}
 
 	public void GameStart() {
