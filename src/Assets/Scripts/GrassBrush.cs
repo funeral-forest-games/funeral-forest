@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 [CustomGridBrush(false, true, false, "GrassBrush")]
 public class GrassBrush : GridBrushBase {

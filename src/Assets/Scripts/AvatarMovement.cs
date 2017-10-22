@@ -37,13 +37,10 @@ public class AvatarMovement : MonoBehaviour {
 		}
 
 		if (camFollowsAvatar) {
-			Vector3 lerp = Vector3.Lerp (rb2d.position, mainCamera.transform.position, 10);
 			Vector3 camPos = mainCamera.transform.position;
 			camPos.x = (camPos.x * 5 + rb2d.position.x) / 6;
 			camPos.y = (camPos.y * 5 + rb2d.position.y) / 6;
 			mainCamera.transform.position = camPos;
-			//mainCamera.transform.position = lerp;
-			//mainCamera.transform.position = new Vector3 (rb2d.position.x, rb2d.position.y, mainCamera.transform.position.z);
 		}
 	}
 
