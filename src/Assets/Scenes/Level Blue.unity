@@ -522,7 +522,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 98a676d4f08b2f84b9827f5f4fec3bce,
+      objectReference: {fileID: 21300000, guid: 75ec3646cb82b46678c695019b434c12,
         type: 3}
     - target: {fileID: 212911941187878114, guid: b1e0b3c72227f4f8098e8d97706b1c30,
         type: 2}
@@ -538,6 +538,18 @@ Prefab:
         type: 2}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679883064138574, guid: b1e0b3c72227f4f8098e8d97706b1c30, type: 2}
+      propertyPath: m_Name
+      value: Bone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920467016577426, guid: b1e0b3c72227f4f8098e8d97706b1c30, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920467016577426, guid: b1e0b3c72227f4f8098e8d97706b1c30, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1e0b3c72227f4f8098e8d97706b1c30, type: 2}
@@ -98513,6 +98525,34 @@ Prefab:
       propertyPath: key
       value: 
       objectReference: {fileID: 925040628}
+    - target: {fileID: 212884548698989574, guid: 53c8619427fdf4b45a0a55e271f7e0e1,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a9f81dfed629648868dd97b6b1bf1223,
+        type: 3}
+    - target: {fileID: 4145926445265896, guid: 53c8619427fdf4b45a0a55e271f7e0e1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145926445265896, guid: 53c8619427fdf4b45a0a55e271f7e0e1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 82253483938727408, guid: 53c8619427fdf4b45a0a55e271f7e0e1,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 69ba799a2960b4f55b40a74a7e6278b6, type: 3}
+    - target: {fileID: 82871599316328358, guid: 53c8619427fdf4b45a0a55e271f7e0e1,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a45d812f98fb84e7080916fa8a4183eb, type: 3}
+    - target: {fileID: 1381903565358034, guid: 53c8619427fdf4b45a0a55e271f7e0e1, type: 2}
+      propertyPath: m_Name
+      value: Dog
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53c8619427fdf4b45a0a55e271f7e0e1, type: 2}
   m_IsPrefabParent: 0
