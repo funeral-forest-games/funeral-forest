@@ -14,12 +14,17 @@ public class AvatarMovement : MonoBehaviour {
 	public bool camFollowsAvatar = true;
 	public bool avatarLocked = false;
 
+	private Animator animator;
+	private int direction = 2;
+	private bool directionChanged = false;
+
 	// Use this for initialization
 	void Start()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
 		mainCamera = Camera.main;
 		footsteps = GetComponent<AudioSource> ();
+		animator = GetComponent<Animator>();
 	}
 
 	//FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -39,7 +44,13 @@ public class AvatarMovement : MonoBehaviour {
 
 			//Use the two store floats to create a new Vector2 variable movement.
 			Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-			if (movement.magnitude > 0) {
+
+			float currentSpeed = movement.magnitude;
+
+			animator.SetFloat ("Speed", currentSpeed);
+			Debug.Log(movement);
+			if (currentSpeed > 0) {
+			
 				if (footsteps.isPlaying == false) {
 					footsteps.Play ();
 				}
@@ -49,7 +60,50 @@ public class AvatarMovement : MonoBehaviour {
 				}
 			}
 
-			rb2d.velocity = movement * speed;
+			switch (direction) {
+				case 0:
+					if (movement.y != 1) {
+						directionChanged = true;
+					}
+					break;
+				case 1:
+					if (movement.x != 1) {
+						directionChanged = true;
+					}
+					break;
+				case 2:
+					if (movement.y != -1) {
+						directionChanged = true;
+					}
+					break;
+				case 3:
+					if (movement.x != -1) {
+						directionChanged = true;
+					}
+					break;
+				default:
+					break;
+			}
+
+			if (directionChanged) {
+				if (movement.x > .1) {
+					direction = 1;
+				} else if (movement.x < -.1) {
+					direction = 3;
+				} else if (movement.y > .1) {
+					direction = 0;
+				} else if (movement.y < -.1) {
+					direction = 2;
+				}
+				directionChanged = false;
+			}
+
+			
+
+			
+
+			animator.SetInteger ("Direction", direction);
+			rb2d.velocity = movement * speed;	
 		}
 
 		if (camFollowsAvatar) {
