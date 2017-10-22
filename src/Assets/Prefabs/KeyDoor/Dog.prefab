@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 82325765418783354}
   - component: {fileID: 82871599316328358}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1381903565358034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.301148, y: 6.539809, z: 0}
+  m_LocalPosition: {x: 20.627926, y: 6.794883, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,10 +54,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.09}
+  m_Offset: {x: -0.3, y: -0.71}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -68,7 +68,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.07, y: 1.01}
+  m_Size: {x: 2.38, y: 2.12}
   m_EdgeRadius: 0
 --- !u!82 &82253483938727408
 AudioSource:
@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 0}
+  childObj: {fileID: 0}
 --- !u!212 &212884548698989574
 SpriteRenderer:
   m_ObjectHideFlags: 1

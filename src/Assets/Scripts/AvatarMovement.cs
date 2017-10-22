@@ -12,7 +12,7 @@ public class AvatarMovement : MonoBehaviour {
 
 	private Camera mainCamera;
 	public bool camFollowsAvatar = true;
-	public bool avatarLocked = false;
+	public bool avatarLocked = true;
 
 	private Animator animator;
 	private int direction = 2;
@@ -25,6 +25,8 @@ public class AvatarMovement : MonoBehaviour {
 		mainCamera = Camera.main;
 		footsteps = GetComponent<AudioSource> ();
 		animator = GetComponent<Animator>();
+
+		Invoke("UnlockAvatar", 1.5f);
 	}
 
 	//FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -111,6 +113,10 @@ public class AvatarMovement : MonoBehaviour {
 			camPos.y = (camPos.y * 5 + rb2d.position.y) / 6;
 			mainCamera.transform.position = camPos;
 		}
+	}
+
+	private void UnlockAvatar() {
+		avatarLocked = false;
 	}
 
 
