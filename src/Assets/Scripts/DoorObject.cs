@@ -23,6 +23,28 @@ public class DoorObject : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
+
+	public void OnCollisionEnter2D(Collision2D collision) {
+		if (isDone) {
+			return;
+		}
+
+		if (collision.gameObject.GetComponent<Inventory> ()) {
+			Inventory inventory = collision.gameObject.GetComponent<Inventory> ();
+			if (inventory.ContainsItem (key.name)) {
+				gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+				if (childObj) {
+					childObj.GetComponent<SpriteRenderer> ().enabled = false;
+				}
+				gameObject.GetComponent<Collider2D> ().enabled = false;
+				isDone = true;
+				idleAudio.Stop ();
+				doneAudio.Play ();
+			}
+		}
+	}
 		
 	public void OnTriggerEnter2D(Collider2D other) {
 		if (isDone) {
