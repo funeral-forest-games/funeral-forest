@@ -17,7 +17,6 @@ public class SplashScreen : MonoBehaviour {
 		timeStart = Time.time;
 		timeForNextLevel = Time.time + timeToDisplayImage;
 		timeForFade = timeForNextLevel / 4;
-		Debug.Log (timeStart);
 	}
 
 	public void OnGUI() {
